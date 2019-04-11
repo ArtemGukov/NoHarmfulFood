@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		ACABD944225E906A00EA0F60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACABD943225E906A00EA0F60 /* AppDelegate.swift */; };
-		ACABD946225E906A00EA0F60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACABD945225E906A00EA0F60 /* ViewController.swift */; };
 		ACABD949225E906A00EA0F60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACABD947225E906A00EA0F60 /* Main.storyboard */; };
 		ACABD94B225E906B00EA0F60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACABD94A225E906B00EA0F60 /* Assets.xcassets */; };
 		ACABD94E225E906B00EA0F60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACABD94C225E906B00EA0F60 /* LaunchScreen.storyboard */; };
+		ACABD956225E908B00EA0F60 /* Additive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACABD955225E908B00EA0F60 /* Additive.swift */; };
+		ACABD959225E98BF00EA0F60 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACABD958225E98BF00EA0F60 /* TableViewController.swift */; };
+		ACABD95F225E999C00EA0F60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACABD95E225E999C00EA0F60 /* DetailViewController.swift */; };
+		ACABD961225EA50500EA0F60 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACABD960225EA50500EA0F60 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ACABD940225E906A00EA0F60 /* NoHarmfulFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoHarmfulFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACABD943225E906A00EA0F60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACABD945225E906A00EA0F60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ACABD948225E906A00EA0F60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACABD94A225E906B00EA0F60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACABD94D225E906B00EA0F60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACABD94F225E906B00EA0F60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACABD955225E908B00EA0F60 /* Additive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additive.swift; sourceTree = "<group>"; };
+		ACABD958225E98BF00EA0F60 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		ACABD95E225E999C00EA0F60 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		ACABD960225EA50500EA0F60 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,49 @@
 		ACABD942225E906A00EA0F60 /* NoHarmfulFood */ = {
 			isa = PBXGroup;
 			children = (
-				ACABD943225E906A00EA0F60 /* AppDelegate.swift */,
-				ACABD945225E906A00EA0F60 /* ViewController.swift */,
-				ACABD947225E906A00EA0F60 /* Main.storyboard */,
+				ACABD957225E908F00EA0F60 /* Model */,
+				ACABD962225FA4B800EA0F60 /* View */,
+				ACABD95C225E98D400EA0F60 /* Controllers */,
+				ACABD95D225E990100EA0F60 /* Supporting files */,
+			);
+			path = NoHarmfulFood;
+			sourceTree = "<group>";
+		};
+		ACABD957225E908F00EA0F60 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACABD955225E908B00EA0F60 /* Additive.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ACABD95C225E98D400EA0F60 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ACABD958225E98BF00EA0F60 /* TableViewController.swift */,
+				ACABD95E225E999C00EA0F60 /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ACABD95D225E990100EA0F60 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
 				ACABD94A225E906B00EA0F60 /* Assets.xcassets */,
+				ACABD943225E906A00EA0F60 /* AppDelegate.swift */,
+				ACABD947225E906A00EA0F60 /* Main.storyboard */,
 				ACABD94C225E906B00EA0F60 /* LaunchScreen.storyboard */,
 				ACABD94F225E906B00EA0F60 /* Info.plist */,
 			);
-			path = NoHarmfulFood;
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		ACABD962225FA4B800EA0F60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ACABD960225EA50500EA0F60 /* TableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACABD946225E906A00EA0F60 /* ViewController.swift in Sources */,
+				ACABD961225EA50500EA0F60 /* TableViewCell.swift in Sources */,
+				ACABD956225E908B00EA0F60 /* Additive.swift in Sources */,
+				ACABD959225E98BF00EA0F60 /* TableViewController.swift in Sources */,
 				ACABD944225E906A00EA0F60 /* AppDelegate.swift in Sources */,
+				ACABD95F225E999C00EA0F60 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7SHMN27XP;
-				INFOPLIST_FILE = NoHarmfulFood/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NoHarmfulFood/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7SHMN27XP;
-				INFOPLIST_FILE = NoHarmfulFood/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NoHarmfulFood/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
