@@ -30,6 +30,5 @@ class TableViewCell: UITableViewCell {
         
         viewDanger.layer.cornerRadius = viewDanger.bounds.width / 2
         viewSource.layer.cornerRadius = viewSource.bounds.width / 2
-        
     }
 }

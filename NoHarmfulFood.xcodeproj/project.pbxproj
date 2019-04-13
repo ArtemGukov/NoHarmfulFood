@@ -15,6 +15,7 @@
 		ACABD959225E98BF00EA0F60 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACABD958225E98BF00EA0F60 /* TableViewController.swift */; };
 		ACABD95F225E999C00EA0F60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACABD95E225E999C00EA0F60 /* DetailViewController.swift */; };
 		ACABD961225EA50500EA0F60 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACABD960225EA50500EA0F60 /* TableViewCell.swift */; };
+		ACABD998225FD82200EA0F60 /* EnumsAdditive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACABD997225FD82200EA0F60 /* EnumsAdditive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		ACABD958225E98BF00EA0F60 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		ACABD95E225E999C00EA0F60 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		ACABD960225EA50500EA0F60 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		ACABD997225FD82200EA0F60 /* EnumsAdditive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsAdditive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				ACABD955225E908B00EA0F60 /* Additive.swift */,
+				ACABD997225FD82200EA0F60 /* EnumsAdditive.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				ACABD956225E908B00EA0F60 /* Additive.swift in Sources */,
 				ACABD959225E98BF00EA0F60 /* TableViewController.swift in Sources */,
 				ACABD944225E906A00EA0F60 /* AppDelegate.swift in Sources */,
+				ACABD998225FD82200EA0F60 /* EnumsAdditive.swift in Sources */,
 				ACABD95F225E999C00EA0F60 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

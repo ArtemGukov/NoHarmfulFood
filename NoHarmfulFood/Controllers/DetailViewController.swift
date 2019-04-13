@@ -10,21 +10,77 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var labelId: UILabel!
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelCategory: UILabel!
+    @IBOutlet weak var labelSource: UILabel!
+    @IBOutlet weak var labelDanger: UILabel!
+    
+    @IBOutlet weak var viewCategory: UIView!
+    @IBOutlet weak var viewSource: UIView!
+    @IBOutlet weak var viewDanger: UIView!
+    
+    @IBOutlet weak var textViewDescription: UITextView!
+
+    var additive: Additive?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        setupUI()
     }
+}
+
+extension DetailViewController {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+func setupUI() {
+    guard let additive = additive else { return }
+    
+    //navigationItem.title = "E"+String(additive.id)
+    labelId.text = "E" + String(additive.id)
+    labelName.text = additive.name
+    
+    labelCategory.text = additive.category.rawValue
+    viewCategory.layer.cornerRadius = viewCategory.bounds.height / 2
+    
+    labelDanger.text = additive.danger.rawValue
+    viewDanger.layer.cornerRadius = viewDanger.bounds.height / 2
+    
+    labelSource.text = additive.source.rawValue
+    viewSource.layer.cornerRadius = viewSource.bounds.height / 2
+    
+    textViewDescription.text = additive.note
+    
+    setupUIColor()
+}
+    
+    func setupUIColor() {
+        
+        viewCategory.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        
+        switch additive!.danger {
+        case .null:
+            viewDanger.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.8509803922, blue: 0.3921568627, alpha: 1)
+        case .low:
+            viewDanger.backgroundColor = #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)
+        case .medium:
+            viewDanger.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
+        case .high:
+            viewDanger.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
+        }
+        
+        switch additive!.source {
+        case .natural:
+            viewSource.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.8509803922, blue: 0.3921568627, alpha: 1)
+        case .animal:
+            viewSource.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.8509803922, blue: 0.3921568627, alpha: 1)
+        case .vegetable:
+            viewSource.backgroundColor = #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)
+        case .unnatural:
+            viewSource.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
+        case .synthetic:
+            viewSource.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
+        }
     }
-    */
-
 }

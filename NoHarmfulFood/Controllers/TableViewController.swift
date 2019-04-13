@@ -16,16 +16,12 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
 
         loadAdditive()
-        
     }
 
     func loadAdditive() {
-        additives = Additive.loadData()
+        additives = Additive.loadData().sorted(by: { $0.id < $1.id })
     }
     
-    
-    // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return additives.count
     }
@@ -61,11 +57,28 @@ extension TableViewController {
         switch additive.source {
         case .natural:
             cell.viewSource.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.8509803922, blue: 0.3921568627, alpha: 1)
+        case .animal:
+            cell.viewSource.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.8509803922, blue: 0.3921568627, alpha: 1)
         case .vegetable:
             cell.viewSource.backgroundColor = #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)
+        case .unnatural:
+            cell.viewSource.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
         case .synthetic:
             cell.viewSource.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
         }
+    }
+}
+
+extension TableViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "DetailSegue" else { return }
+        
+        let controller = segue.destination as! DetailViewController
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        
+        controller.additive = additives[indexPath.row]
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
