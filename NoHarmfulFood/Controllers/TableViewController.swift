@@ -16,10 +16,15 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
 
         loadAdditive()
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 
     func loadAdditive() {
         additives = Additive.loadData().sorted(by: { $0.id < $1.id })
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +39,20 @@ class TableViewController: UITableViewController {
 
         configure(cell: cell, with: additive)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            additives.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        default:
+            break
+        }
     }
 }
 
@@ -69,16 +88,52 @@ extension TableViewController {
     }
 }
 
+// MARK: - Add alert
+extension TableViewController {
+    
+    func alertWrongMessage(message: String) {
+        let alert = UIAlertController(title: "Ошибка",
+                                      message: message,
+                                      preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK",
+                                     style: .default,
+                                     handler: nil)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
+
+// MARK: - Navigation
+extension TableViewController {
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        guard segue.identifier == "SaveSegue" else { return }
+        guard let addViewController = segue.source as? AddViewController else { return }
+        let newAdditive = addViewController.newAdditive
+
+        //let indexPath = IndexPath(row: additives.count, section: 0)
+
+        if additives.contains(where: { $0.id == newAdditive.id }) {
+            alertWrongMessage(message: "Добавка с таким кодом уже зарегистрирована")
+            return
+        } else {
+            let index = additives.insertionIndexOf(elem: newAdditive) { $0.id < $1.id }
+            additives.insert(newAdditive, at: index)
+            tableView.reloadData()
+        }
+    }
+}
+
 extension TableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "DetailSegue" else { return }
-        
-        let controller = segue.destination as! DetailViewController
+        guard let detailViewController = segue.destination as? DetailViewController else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        
-        controller.additive = additives[indexPath.row]
-        
+        detailViewController.additive = additives[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+
 

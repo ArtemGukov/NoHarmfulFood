@@ -6,7 +6,7 @@
 //  Copyright © 2019 Gukov.space. All rights reserved.
 //
 
-enum Category: String {
+enum Category: String, CaseIterable {
     case antioxidants = "Антиоксиданты",
     aromatizers = "Ароматизаторы",
     substancesAgainstCaking = "Вещества против слеживания",
@@ -27,7 +27,7 @@ enum Category: String {
     emulsifiers = "Эмульгаторы"
 }
 
-enum Source: String {
+enum Source: String, CaseIterable {
     case vegetable = "Растительное",
     animal = "Животное",
     natural = "Натуральное",
@@ -35,7 +35,7 @@ enum Source: String {
     synthetic = "Синтетическое"
 }
 
-enum Danger: String {
+enum Danger: String, CaseIterable {
     case null = "Нулевая",
     low = "Низкая",
     medium = "Средняя",

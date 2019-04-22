@@ -16,6 +16,10 @@
 		ACABD95F225E999C00EA0F60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACABD95E225E999C00EA0F60 /* DetailViewController.swift */; };
 		ACABD961225EA50500EA0F60 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACABD960225EA50500EA0F60 /* TableViewCell.swift */; };
 		ACABD998225FD82200EA0F60 /* EnumsAdditive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACABD997225FD82200EA0F60 /* EnumsAdditive.swift */; };
+		ACAC0C70226B38D000556F29 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC0C6F226B38D000556F29 /* AddViewController.swift */; };
+		ACAC0C73226D134500556F29 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC0C72226D134500556F29 /* UITextField+Extension.swift */; };
+		ACAC0C75226D276E00556F29 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC0C74226D276E00556F29 /* UIViewController+Extension.swift */; };
+		ACAC0C77226D386600556F29 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC0C76226D386600556F29 /* Array+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		ACABD95E225E999C00EA0F60 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		ACABD960225EA50500EA0F60 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		ACABD997225FD82200EA0F60 /* EnumsAdditive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsAdditive.swift; sourceTree = "<group>"; };
+		ACAC0C6F226B38D000556F29 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		ACAC0C72226D134500556F29 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		ACAC0C74226D276E00556F29 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		ACAC0C76226D386600556F29 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 		ACABD942225E906A00EA0F60 /* NoHarmfulFood */ = {
 			isa = PBXGroup;
 			children = (
+				ACAC0C71226D132200556F29 /* Extensions */,
 				ACABD957225E908F00EA0F60 /* Model */,
 				ACABD962225FA4B800EA0F60 /* View */,
 				ACABD95C225E98D400EA0F60 /* Controllers */,
@@ -84,6 +93,7 @@
 			children = (
 				ACABD958225E98BF00EA0F60 /* TableViewController.swift */,
 				ACABD95E225E999C00EA0F60 /* DetailViewController.swift */,
+				ACAC0C6F226B38D000556F29 /* AddViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -106,6 +116,16 @@
 				ACABD960225EA50500EA0F60 /* TableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		ACAC0C71226D132200556F29 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ACAC0C72226D134500556F29 /* UITextField+Extension.swift */,
+				ACAC0C74226D276E00556F29 /* UIViewController+Extension.swift */,
+				ACAC0C76226D386600556F29 /* Array+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +154,10 @@
 		ACABD938225E906A00EA0F60 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+					2,
+				);
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Gukov.space;
@@ -179,10 +203,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACAC0C75226D276E00556F29 /* UIViewController+Extension.swift in Sources */,
+				ACAC0C77226D386600556F29 /* Array+Extension.swift in Sources */,
 				ACABD961225EA50500EA0F60 /* TableViewCell.swift in Sources */,
 				ACABD956225E908B00EA0F60 /* Additive.swift in Sources */,
+				ACAC0C70226B38D000556F29 /* AddViewController.swift in Sources */,
 				ACABD959225E98BF00EA0F60 /* TableViewController.swift in Sources */,
 				ACABD944225E906A00EA0F60 /* AppDelegate.swift in Sources */,
+				ACAC0C73226D134500556F29 /* UITextField+Extension.swift in Sources */,
 				ACABD998225FD82200EA0F60 /* EnumsAdditive.swift in Sources */,
 				ACABD95F225E999C00EA0F60 /* DetailViewController.swift in Sources */,
 			);

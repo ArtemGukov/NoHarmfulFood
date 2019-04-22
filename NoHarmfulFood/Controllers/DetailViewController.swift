@@ -22,23 +22,21 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var textViewDescription: UITextView!
 
-    var additive: Additive?
+    var additive = Additive()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        navigationItem.rightBarButtonItem?.isEnabled = false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         setupUI()
     }
+
 }
 
 extension DetailViewController {
     
 func setupUI() {
-    guard let additive = additive else { return }
     
-    //navigationItem.title = "E"+String(additive.id)
-    labelId.text = "E" + String(additive.id)
+    labelId.text = "E" + additive.id
     labelName.text = additive.name
     
     labelCategory.text = additive.category.rawValue
@@ -59,24 +57,26 @@ func setupUI() {
         
         viewCategory.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         
-        switch additive!.danger {
+        switch additive.danger {
         case .null:
             viewDanger.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.8509803922, blue: 0.3921568627, alpha: 1)
         case .low:
             viewDanger.backgroundColor = #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)
+            labelDanger.textColor = UIColor.black
         case .medium:
             viewDanger.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
         case .high:
             viewDanger.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
         }
         
-        switch additive!.source {
+        switch additive.source {
         case .natural:
             viewSource.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.8509803922, blue: 0.3921568627, alpha: 1)
         case .animal:
             viewSource.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.8509803922, blue: 0.3921568627, alpha: 1)
         case .vegetable:
             viewSource.backgroundColor = #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)
+            labelSource.textColor = UIColor.black
         case .unnatural:
             viewSource.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
         case .synthetic:
@@ -84,3 +84,14 @@ func setupUI() {
         }
     }
 }
+
+extension DetailViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "EditSegue" else { return }
+        guard let addViewController = segue.destination as? AddViewController else { return }
+            addViewController.newAdditive = additive
+
+            //print(#line, #function, additive)
+    }
+}
+
